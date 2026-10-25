@@ -4,7 +4,7 @@ FROM alpine:latest
 
 COPY --from=dufs-source /bin/dufs /bin/dufs
 
-RUN mkdir -p /data/punlic
+RUN mkdir -p /data/public
 
 EXPOSE 5000
 
