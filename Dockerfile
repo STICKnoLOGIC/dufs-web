@@ -8,7 +8,7 @@ COPY --from=dufs-source /assets /assets
 
 COPY public.md /data/public/readme.md
 
-COPY readme.md /data/readme.md
+COPY README.md /data/readme.md
 
 RUN mkdir -p /data/public
 
