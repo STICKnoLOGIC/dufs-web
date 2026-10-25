@@ -10,4 +10,4 @@ EXPOSE 5000
 
 ENTRYPOINT ["/bin/dufs"]
 
-CMD ["/data", "-A", "-b", "0.0.0.0", "-p", "5000"]
+CMD ["/data", "-A", "-b", "--assets", "/assets", "0.0.0.0", "-p", "5000"]
