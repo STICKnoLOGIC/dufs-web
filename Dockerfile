@@ -1,8 +1,4 @@
-FROM sigoden/dufs:latest AS dufs-source
-
-FROM alpine:latest
-
-COPY --from=dufs-source /bin/dufs /bin/dufs
+FROM sigoden/dufs:latest
 
 RUN mkdir -p /data/public
 
