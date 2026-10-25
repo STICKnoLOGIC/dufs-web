@@ -4,13 +4,17 @@ FROM alpine:latest
 
 COPY --from=dufs-source /bin/dufs /bin/dufs
 
-RUN mkdir -p /assets
+RUN mkdir -p /assets /data/public
+
+RUN wget -q \
+      "https://github.com/sigoden/dufs/raw/refs/heads/main/assets/favicon.ico" \
+      "https://raw.githubusercontent.com/sigoden/dufs/refs/heads/main/assets/index.css" \
+      "https://raw.githubusercontent.com/sigoden/dufs/refs/heads/main/assets/index.js" \
+      "https://raw.githubusercontent.com/sigoden/dufs/refs/heads/main/assets/index.html"
 
 COPY public.md /data/public/readme.md
 
 COPY README.md /data/readme.md
-
-RUN mkdir -p /data/public
 
 EXPOSE 5000
 
